@@ -1,0 +1,3049 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <meta name="description" content="{{project.meta.ogDescription}}">
+      <meta name="theme-color" content="#ffffff">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="{{project.meta.robotsMeta}}">
+      
+      <title>{{project.seoTitle}}</title>
+      <!-- SEO Description -->
+      <meta name="description" content="{{project.seoDescription}}">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+       
+      
+      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+      <!-- Performance optimization: Preload critical resources -->
+      <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+      
+      <!-- Header Scripts -->
+      <script id="header-scripts">
+        // This script tag will be replaced with actual scripts.head content
+        if (window.scripts && window.scripts.head) {
+          document.getElementById('header-scripts').outerHTML = window.scripts.head;
+        }
+      </script>
+
+      <!-- Preconnect -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+      <!-- Font stylesheet -->
+
+      <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+      <!-- Core CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: {
+                  DEFAULT: '{{settings.colors.primary}}',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8', 
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                secondary: {
+                  DEFAULT: '{{settings.colors.secondary}}',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3', 
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                accent: {
+                  DEFAULT: '{{settings.colors.accent}}',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3', 
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+              },
+              fontFamily: {
+                sans: ['{{settings.fonts.primary}}', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                heading: ['{{settings.fonts.secondary}}', 'Inter', 'system-ui', 'sans-serif'],
+                body: ['{{settings.fonts.secondary}}', 'Inter', 'system-ui', 'sans-serif'],
+              },
+              spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
+                '30': '7.5rem',
+              },
+              maxWidth: {
+                '8xl': '88rem',
+                '9xl': '96rem',
+              },
+              animation: {
+                'fade-in': 'fadeIn 0.5s ease-in',
+                'fade-out': 'fadeOut 0.5s ease-out',
+                'slide-up': 'slideUp 0.5s ease-out',
+                'slide-down': 'slideDown 0.5s ease-out',
+                'slide-left': 'slideLeft 0.5s ease-out',
+                'slide-right': 'slideRight 0.5s ease-out',
+                'scale-in': 'scaleIn 0.5s ease-out',
+                'scale-out': 'scaleOut 0.5s ease-out',
+                'spin-slow': 'spin 3s linear infinite',
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'bounce-slow': 'bounce 3s infinite',
+                'float': 'float 3s ease-in-out infinite',
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                fadeOut: {
+                  '0%': { opacity: '1' },
+                  '100%': { opacity: '0' },
+                },
+                slideUp: {
+                  '0%': { transform: 'translateY(20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideDown: {
+                  '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideLeft: {
+                  '0%': { transform: 'translateX(20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                slideRight: {
+                  '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                scaleIn: {
+                  '0%': { transform: 'scale(0.9)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                scaleOut: {
+                  '0%': { transform: 'scale(1.1)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                },
+              },
+              aspectRatio: {
+                'portrait': '3/4',
+                'landscape': '4/3',
+                'ultrawide': '21/9',
+              },
+            },
+          },
+          variants: {
+            extend: {
+              opacity: ['disabled'],
+              cursor: ['disabled'],
+              backgroundColor: ['active', 'disabled'],
+              textColor: ['active', 'disabled'],
+            },
+          },
+        }
+      });
+      </script>
+
+      <!-- Utilities and Components -->
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+      
+      <!-- Optimized Font Loading -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      
+      <!-- Icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!-- Dynamic Meta Tags -->
+      <meta name="description" content="{{project.meta.ogDescription}}">
+      <meta name="keywords" content="{{project.meta.keywords}}">
+      <meta name="robots" content="{{project.meta.robotsMeta}}">
+      <meta name="google-site-verification" content="{{project.meta.googleVerification}}">
+      <meta name="baidu-verification" content="{{project.meta.baiduVerification}}">
+      <meta name="yandex-verification" content="{{project.meta.yandexVerification}}">
+      <meta name="bing-verification" content="{{project.meta.bingVerification}}">
+      <meta property="og:title" content="{{project.meta.ogTitle}}">
+      <meta property="og:description" content="{{project.meta.ogDescription}}">
+      <meta property="og:image" content="{{project.meta.ogImage}}">
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="en_US">
+      <meta property="og:site_name" content="{{project.name}}">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="{{project.meta.ogTitle}}">
+      <meta name="twitter:description" content="{{project.meta.ogDescription}}">
+      <meta name="twitter:image" content="{{project.meta.ogImage}}">
+    
+      
+      <link rel="icon" type="image/x-icon" href="{{settings.favicon}}">
+      
+      <style>
+        h1, h2, h3, h4, h5, h6 {
+          font-family: {{settings.fonts.primary}}, Inter, system-ui, sans-serif;
+        }
+        body {
+          font-family: {{settings.fonts.secondary}}, Inter, system-ui, sans-serif;
+        }
+      </style>
+   </head>
+   <body class="antialiased text-gray-800 min-h-screen flex flex-col">
+      <!-- Skip to main content link for accessibility -->
+      <a href="#main-content" 
+         class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         Skip to main content
+      </a>
+
+      <!-- Main content area -->
+      <main id="main-content" class="flex-1 relative h-full">
+        <!-- Content will be injected here -->
+      </main>
+
+      <!-- {bodyScripts} -->
+      
+   </body>
+</html><script>window.projectId = "565f6612-e9c9-43e0-9aca-c37892fcd38e";</script><div id='RolloutPageContent'><element id="a287d3d7-21a9-48cd-9185-bd514918b8bc" data-section-id="a287d3d7-21a9-48cd-9185-bd514918b8bc">
+
+
+<div id="root">
+  <header id="header" class="bg-neutral-900 text-white py-4">
+    <nav class="container mx-auto px-4">
+      <div class="flex justify-between items-center">
+        <a href="#surprise-card" class="text-3xl font-bold font-dancing-script text-pink-400">Birthday Surprise</a>
+        
+        <div class="hidden md:flex space-x-6">
+          <ul class="flex space-x-6">
+              <li><a href="#surprise-card" class="hover:text-pink-400 transition-colors duration-300 font-montserrat">Home</a></li>
+              <li><a href="#gallery" class="hover:text-pink-400 transition-colors duration-300 font-montserrat">Gallery</a></li>
+              <li><a href="#wishes" class="hover:text-pink-400 transition-colors duration-300 font-montserrat">Wishes</a></li>
+              <li><a href="#personal-note" class="hover:text-pink-400 transition-colors duration-300 font-montserrat">Message</a></li>
+          </ul>
+        </div>
+        
+        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <div id="mobile-menu" class="md:hidden hidden mt-4">
+        <ul class="flex flex-col space-y-4">
+            <li><a href="#surprise-card" class="block hover:text-pink-400 transition-colors duration-300 font-montserrat">Home</a></li>
+            <li><a href="#gallery" class="block hover:text-pink-400 transition-colors duration-300 font-montserrat">Gallery</a></li>
+            <li><a href="#wishes" class="block hover:text-pink-400 transition-colors duration-300 font-montserrat">Wishes</a></li>
+            <li><a href="#personal-note" class="block hover:text-pink-400 transition-colors duration-300 font-montserrat">Message</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', function() {
+          const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+          mobileMenuButton.setAttribute('aria-expanded', !expanded);
+          mobileMenu.classList.toggle('hidden');
+        });
+      });
+    </script>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;600;700&display=swap');
+      
+      .font-dancing-script {
+        font-family: 'Dancing Script', cursive;
+      }
+      
+      .font-montserrat {
+        font-family: 'Montserrat', sans-serif;
+      }
+    </style>
+  </header>
+</div>
+</element><element id="ec1b8bcd-f2f7-4482-bae0-1b84b7c6e77e" data-section-id="ec1b8bcd-f2f7-4482-bae0-1b84b7c6e77e">
+
+
+<div id="root">
+  <section id="surprise-card" class="min-h-screen flex items-center justify-center bg-neutral-900 py-20 px-4 relative overflow-hidden">
+    <div class="absolute inset-0 hidden" id="love-animations">
+      <!-- Floating hearts background -->
+      <div class="heart-container"></div>
+    </div>
+
+    <div class="card-container relative z-10 w-full max-w-md mx-auto">
+      <div class="card bg-white rounded-xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:shadow-pink-500/30 p-8 text-center animate__animated animate__fadeIn">
+        <div id="card-content" class="py-6">
+          <h2 class="text-4xl font-bold mb-4 text-pink-500 font-dancing-script animate__animated animate__pulse">It's Your special day, Yayyyyyyyy!</h2>
+          <div class="h-40 flex items-center justify-center">
+            <p class="text-xl text-neutral-700 font-montserrat">✨🎂✨</p>
+          </div>
+        </div>
+
+        <div id="card-buttons" class="mt-6 space-y-4 hidden">
+          <button id="yes-button" class="w-full py-3 px-6 bg-pink-500 text-white rounded-full font-bold hover:bg-pink-600 transition-colors duration-300 animate__animated animate__bounceIn font-montserrat">
+            Yes
+          </button>
+          <button id="no-button" class="w-full py-3 px-6 bg-neutral-200 text-neutral-700 rounded-full font-bold hover:bg-neutral-300 transition-colors duration-300 animate__animated animate__bounceIn font-montserrat">
+            No
+          </button>
+        </div>
+
+        <div id="celebration-buttons" class="mt-6 space-y-4 hidden">
+          <button id="music-button" class="w-full py-3 px-6 bg-pink-500 text-white rounded-full font-bold hover:bg-pink-600 transition-colors duration-300 animate__animated animate__bounceIn font-montserrat">
+            Play the music
+          </button>
+          <button id="balloons-button" class="w-full py-3 px-6 bg-pink-500 text-white rounded-full font-bold hover:bg-pink-600 transition-colors duration-300 hidden animate__animated animate__bounceIn font-montserrat">
+            Fly the balloons??
+          </button>
+          <button id="message-button" class="w-full py-3 px-6 bg-pink-500 text-white rounded-full font-bold hover:bg-pink-600 transition-colors duration-300 hidden animate__animated animate__bounceIn font-montserrat">
+            I have a message for You
+          </button>
+        </div>
+
+        <div id="birthday-text" class="mt-6 hidden animate__animated">
+          <h1 class="text-5xl font-bold text-pink-500 font-dancing-script">Happy Birthday!</h1>
+        </div>
+
+        <div id="personal-message" class="mt-6 hidden">
+          <h3 class="text-3xl font-bold mb-4 text-pink-500 font-dancing-script">Dear Madamji</h3>
+          <p class="text-lg text-neutral-700 font-montserrat">On your special day, I want to wish you a very.happy birthday! You are the most wonderful person I have ever met,(unexpectedly) and I feel so lucky to have you in my life. You make me smile every day, and I am grateful for all the ❤️ and happiness you bring into my life.
+            May all your dreams and wishes come true.
+            I promise to always be by your side, supporting you, and making you laugh.  my partner in crime 
+            
+            Happiest birthday🌼❤️</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="balloons-container" class="absolute inset-0 pointer-events-none hidden"></div>
+    
+    <audio id="birthday-music">
+      <source src="Fitoor.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </section>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;600;700&display=swap');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+    
+    .font-dancing-script {
+      font-family: 'Dancing Script', cursive;
+    }
+    
+    .font-montserrat {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Heart animations */
+    .heart {
+      position: absolute;
+      height: 30px;
+      width: 30px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FF69B4"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat;
+      will-change: transform;
+      animation: float-up 15s linear forwards;
+      opacity: 0.8;
+    }
+
+    @keyframes float-up {
+      0% {
+        transform: translateY(100vh) scale(0.5) rotate(0deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-100px) scale(1.5) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Balloon animations */
+    .balloon {
+      position: absolute;
+      bottom: -100px;
+      width: 40px;
+      height: 50px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      will-change: transform;
+      animation: float-balloon 8s ease-in-out forwards;
+    }
+
+    @keyframes float-balloon {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh) rotate(20deg);
+        opacity: 0;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const cardContent = document.getElementById('card-content');
+      const cardButtons = document.getElementById('card-buttons');
+      const yesButton = document.getElementById('yes-button');
+      const noButton = document.getElementById('no-button');
+      const celebrationButtons = document.getElementById('celebration-buttons');
+      const musicButton = document.getElementById('music-button');
+      const balloonsButton = document.getElementById('balloons-button');
+      const messageButton = document.getElementById('message-button');
+      const birthdayText = document.getElementById('birthday-text');
+      const personalMessage = document.getElementById('personal-message');
+      const loveAnimations = document.getElementById('love-animations');
+      const balloonsContainer = document.getElementById('balloons-container');
+      const birthdayMusic = document.getElementById('birthday-music');
+      const heartContainer = document.querySelector('.heart-container');
+
+      // Card Content Animation Sequence
+      setTimeout(() => {
+        changeCardContent("I have made something very special, as you are very special to me", "animate__bounceIn");
+      }, 3000);
+
+      setTimeout(() => {
+        changeCardContent("Do you want to see what I made?", "animate__rubberBand");
+        cardButtons.classList.remove('hidden');
+      }, 6000);
+
+      // Yes Button Click Event
+      yesButton.addEventListener('click', function() {
+        cardButtons.classList.add('hidden');
+        loveAnimations.classList.remove('hidden');
+        celebrationButtons.classList.remove('hidden');
+        
+        // Start creating floating hearts
+        startHeartAnimation();
+      });
+
+      // No Button Click Event - Just tease them by showing yes button effects
+      noButton.addEventListener('click', function() {
+        noButton.classList.add('animate__shakeX');
+        setTimeout(() => {
+          noButton.classList.remove('animate__shakeX');
+        }, 1000);
+      });
+
+      // Music Button Click Event
+      musicButton.addEventListener('click', function() {
+        birthdayMusic.play();
+        musicButton.textContent = 'Music Playing ♫';
+        musicButton.disabled = true;
+        musicButton.classList.add('opacity-75');
+        balloonsButton.classList.remove('hidden');
+      });
+
+      // Balloons Button Click Event
+      balloonsButton.addEventListener('click', function() {
+        balloonsButton.textContent = 'Balloons Flying!';
+        balloonsButton.disabled = true;
+        balloonsButton.classList.add('opacity-75');
+        balloonsContainer.classList.remove('hidden');
+        
+        // Start creating balloons
+        startBalloonsAnimation();
+        
+        // Show birthday text
+        birthdayText.classList.remove('hidden');
+        birthdayText.classList.add('animate__zoomInDown');
+        
+        // Show message button after a delay
+        setTimeout(() => {
+          messageButton.classList.remove('hidden');
+        }, 2000);
+      });
+
+      // Message Button Click Event
+      messageButton.addEventListener('click', function() {
+        cardContent.classList.add('hidden');
+        birthdayText.classList.add('hidden');
+        celebrationButtons.classList.add('hidden');
+        personalMessage.classList.remove('hidden');
+        personalMessage.classList.add('animate__fadeIn');
+      });
+
+      // Helper Functions
+      function changeCardContent(text, animationClass) {
+        const element = cardContent.querySelector('h2');
+        element.classList.remove('animate__pulse', 'animate__bounceIn', 'animate__rubberBand');
+        void element.offsetWidth; // Trigger reflow
+        element.classList.add(animationClass);
+        element.textContent = text;
+      }
+
+      function startHeartAnimation() {
+        setInterval(() => {
+          const heart = document.createElement('div');
+          heart.classList.add('heart');
+          heart.style.left = Math.random() * 100 + 'vw';
+          heart.style.animationDuration = (Math.random() * 5 + 10) + 's';
+          heart.style.opacity = Math.random() * 0.5 + 0.3;
+          heartContainer.appendChild(heart);
+          
+          // Remove heart after animation completes
+          setTimeout(() => {
+            heart.remove();
+          }, 15000);
+        }, 300);
+      }
+
+      function startBalloonsAnimation() {
+        const balloonColors = ['#FF69B4', '#FF1493', '#FFC0CB', '#FF77FF', '#FF5CAD'];
+        const balloonSvgs = balloonColors.map(color => {
+          return `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 200"><path d="M50,0 C22.4,0 0,22.4 0,50 C0,77.6 22.4,120 50,120 C77.6,120 100,77.6 100,50 C100,22.4 77.6,0 50,0 Z" fill="${color}"/><path d="M55,120 L45,120 L40,200 L60,200 Z" fill="%23FFC107"/></svg>`;
+        });
+
+        for (let i = 0; i < 50; i++) {
+          setTimeout(() => {
+            const balloon = document.createElement('div');
+            balloon.classList.add('balloon');
+            const randomBalloonSvg = balloonSvgs[Math.floor(Math.random() * balloonSvgs.length)];
+            balloon.style.backgroundImage = `url('${randomBalloonSvg}')`;
+            balloon.style.left = Math.random() * 100 + 'vw';
+            balloon.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            balloon.style.animationDelay = Math.random() * 2 + 's';
+            balloonsContainer.appendChild(balloon);
+            
+            // Remove balloon after animation completes
+            setTimeout(() => {
+              balloon.remove();
+            }, 10000);
+          }, i * 200);
+        }
+      }
+    });
+  </script>
+</div>
+</element><element id="ec476982-08a9-45f5-9fb5-2707035c6826" data-section-id="ec476982-08a9-45f5-9fb5-2707035c6826">
+
+
+<div id="root">
+  <section id="music-section" class="py-16 px-4 bg-neutral-800 relative overflow-hidden">
+    <div class="container mx-auto max-w-4xl">
+      <div class="text-center mb-12 animate__animated animate__fadeIn">
+        <h2 class="text-4xl md:text-5xl font-bold text-pink-400 mb-6 font-dancing-script">Birthday Playlist</h2>
+        <p class="text-white font-montserrat text-lg mb-8">A special collection of songs to celebrate your special day</p>
+      </div>
+      
+      <div class="music-player bg-neutral-900 rounded-xl p-6 shadow-lg shadow-pink-500/20 max-w-lg mx-auto">
+        <div class="currently-playing mb-6 text-center">
+          <div class="music-animation flex justify-center mb-4">
+            <div class="equalizer flex items-end space-x-1 h-16">
+              <div class="bar bg-pink-500 w-2 h-4 rounded-t-sm animate-eq1"></div>
+              <div class="bar bg-pink-400 w-2 h-8 rounded-t-sm animate-eq2"></div>
+              <div class="bar bg-pink-500 w-2 h-12 rounded-t-sm animate-eq3"></div>
+              <div class="bar bg-pink-400 w-2 h-6 rounded-t-sm animate-eq4"></div>
+              <div class="bar bg-pink-500 w-2 h-10 rounded-t-sm animate-eq5"></div>
+              <div class="bar bg-pink-400 w-2 h-8 rounded-t-sm animate-eq6"></div>
+              <div class="bar bg-pink-500 w-2 h-4 rounded-t-sm animate-eq7"></div>
+            </div>
+          </div>
+          <h3 class="text-pink-300 font-montserrat font-semibold text-xl" id="current-song-title">Birthday Song</h3>
+          <p class="text-neutral-400 font-montserrat" id="current-artist">Select a song to play</p>
+        </div>
+        
+        <div class="controls flex justify-center items-center mb-6 space-x-4">
+          <button class="p-2 text-white hover:text-pink-400 transition-colors" id="prev-button" aria-label="Previous song">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+            </svg>
+          </button>
+          
+          <button class="p-3 bg-pink-500 hover:bg-pink-600 text-white rounded-full transition-colors" id="play-pause-button" aria-label="Play or pause music">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </button>
+          
+          <button class="p-2 text-white hover:text-pink-400 transition-colors" id="next-button" aria-label="Next song">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+        
+        <div class="progress-container bg-neutral-700 rounded-full h-2 mb-6">
+          <div class="progress-bar bg-pink-500 h-2 rounded-full w-0" id="progress"></div>
+        </div>
+        
+        <div class="volume-control flex items-center justify-between">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M12 6a7.39 7.39 0 014.355 2.244M7.5 12h.01m9.984 0h.01M12 3v1m-2-1h4" />
+          </svg>
+          <input type="range" min="0" max="100" value="80" class="volume-slider w-full mx-3" id="volume">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neutral-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M12 6a7.39 7.39 0 014.355 2.244M18.364 5.636a9 9 0 010 12.728M21 12a9 9 0 01-9 9" />
+          </svg>
+        </div>
+      </div>
+      
+      <div class="playlist mt-10 bg-neutral-900 rounded-xl p-6 shadow-lg max-w-lg mx-auto">
+        <h3 class="text-2xl text-pink-400 font-dancing-script mb-4">Your Birthday Playlist</h3>
+        <ul class="space-y-3" id="song-list">
+          <li class="song-item flex justify-between items-center p-3 hover:bg-neutral-800 rounded-lg cursor-pointer transition-colors active" data-src="Tum_Se_Hi.mp3">
+            <div>
+              <h4 class="text-white font-montserrat font-medium">Tum Se Hi</h4>
+              <p class="text-neutral-400 font-montserrat text-sm">Mohit Chauhan</p>
+            </div>
+            <span class="text-pink-400 text-sm">5:23</span>
+          </li>
+          <li class="song-item flex justify-between items-center p-3 hover:bg-neutral-800 rounded-lg cursor-pointer transition-colors" data-src="Lag_Ja_gale.mp3">
+            <div>
+              <h4 class="text-white font-montserrat font-medium">Lag Ja Gale</h4>
+              <p class="text-neutral-400 font-montserrat text-sm">Lata Mangeshkar</p>
+            </div>
+            <span class="text-pink-400 text-sm">4:19</span>
+          </li>
+          <li class="song-item flex justify-between items-center p-3 hover:bg-neutral-800 rounded-lg cursor-pointer transition-colors" data-src="Agar Tum Saath Ho.mp3">
+            <div>
+              <h4 class="text-white font-montserrat font-medium">Agar Tum Saath Ho</h4>
+              <p class="text-neutral-400 font-montserrat text-sm">Alka Yagnik, Arijit Singh</p>
+            </div>
+            <span class="text-pink-400 text-sm">5:41</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Hidden audio element for playing music -->
+    <audio id="audio-player">
+      <source src="" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Floating music notes animation in background -->
+    <div class="music-notes-container absolute inset-0 pointer-events-none overflow-hidden"></div>
+  </section>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;600;700&display=swap');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+    
+    .font-dancing-script {
+      font-family: 'Dancing Script', cursive;
+    }
+    
+    .font-montserrat {
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* Music player animations */
+    @keyframes equalize1 { 0%, 100% { height: 4px; } 50% { height: 12px; } }
+    @keyframes equalize2 { 0%, 100% { height: 8px; } 30% { height: 14px; } 60% { height: 10px; } }
+    @keyframes equalize3 { 0%, 100% { height: 12px; } 35% { height: 5px; } 70% { height: 15px; } }
+    @keyframes equalize4 { 0%, 100% { height: 6px; } 40% { height: 12px; } 80% { height: 8px; } }
+    @keyframes equalize5 { 0%, 100% { height: 10px; } 45% { height: 5px; } 90% { height: 16px; } }
+    @keyframes equalize6 { 0%, 100% { height: 8px; } 35% { height: 16px; } 70% { height: 7px; } }
+    @keyframes equalize7 { 0%, 100% { height: 4px; } 50% { height: 12px; } }
+    
+    .animate-eq1 { animation: equalize1 1s infinite; }
+    .animate-eq2 { animation: equalize2 1.1s infinite; }
+    .animate-eq3 { animation: equalize3 1.2s infinite; }
+    .animate-eq4 { animation: equalize4 1.3s infinite; }
+    .animate-eq5 { animation: equalize5 1.1s infinite; }
+    .animate-eq6 { animation: equalize6 1.2s infinite; }
+    .animate-eq7 { animation: equalize7 1s infinite; }
+    
+    /* Volume slider styling */
+    input[type=range] {
+      height: 5px;
+      -webkit-appearance: none;
+      background: #444;
+      border-radius: 5px;
+      background-image: linear-gradient(#ec4899, #ec4899);
+      background-repeat: no-repeat;
+      background-size: 80% 100%;
+    }
+    
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      background: #ec4899;
+      cursor: pointer;
+    }
+    
+    /* Music note animation */
+    .music-note {
+      position: absolute;
+      font-size: 24px;
+      color: rgba(236, 72, 153, 0.6);
+      animation: float-note 8s linear infinite;
+      will-change: transform;
+    }
+    
+    @keyframes float-note {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-20vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    
+    .song-item.active {
+      background-color: rgba(236, 72, 153, 0.2);
+      border-left: 3px solid #ec4899;
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Elements
+      const audioPlayer = document.getElementById('audio-player');
+      const playPauseButton = document.getElementById('play-pause-button');
+      const prevButton = document.getElementById('prev-button');
+      const nextButton = document.getElementById('next-button');
+      const volumeSlider = document.getElementById('volume');
+      const progressBar = document.getElementById('progress');
+      const songList = document.getElementById('song-list');
+      const songItems = document.querySelectorAll('.song-item');
+      const currentSongTitle = document.getElementById('current-song-title');
+      const currentArtist = document.getElementById('current-artist');
+      const musicNotesContainer = document.querySelector('.music-notes-container');
+      const equalizer = document.querySelector('.equalizer');
+      
+      let isPlaying = false;
+      let currentSongIndex = 0;
+      
+      // Song data
+      const songs = [
+        { 
+          title: 'Tum Se Hi', 
+          artist: 'Mohit Chauhan', 
+          src: 'Tum_Se_Hi.mp3',
+          duration: '5:23'
+        },
+        { 
+          title: 'Lag Ja Gale', 
+          artist: 'Lata Mangeshkar', 
+          src: 'Lag_Ja_gale.mp3',
+          duration: '4:19' 
+        },
+        { 
+          title: 'Agar Tum Saath Ho', 
+          artist: 'Alka Yagnik, Arijit Singh', 
+          src: 'Agar Tum Saath Ho.mp3',
+          duration: '3:40' 
+        }
+      ];
+      
+      // Initialize player
+      function initPlayer() {
+        audioPlayer.volume = volumeSlider.value / 100;
+        loadSong(currentSongIndex);
+        
+        // Hide equalizer initially
+        equalizer.style.visibility = 'hidden';
+        
+        // Update progress bar as song plays
+        audioPlayer.addEventListener('timeupdate', updateProgress);
+        
+        // When song ends, play next song
+        audioPlayer.addEventListener('ended', nextSong);
+      }
+      
+      // Load song
+      function loadSong(index) {
+        const song = songs[index];
+        currentSongTitle.textContent = song.title;
+        currentArtist.textContent = song.artist;
+        audioPlayer.src = song.src;
+        
+        // Update active song in playlist
+        songItems.forEach((item, i) => {
+          if (i === index) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+        });
+      }
+      
+      // Play/Pause
+      function togglePlay() {
+        if (isPlaying) {
+          pauseSong();
+        } else {
+          playSong();
+        }
+      }
+      
+      // Play song
+      function playSong() {
+        isPlaying = true;
+        audioPlayer.play();
+        playPauseButton.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        `;
+        equalizer.style.visibility = 'visible';
+        startMusicNotes();
+      }
+      
+      // Pause song
+      function pauseSong() {
+        isPlaying = false;
+        audioPlayer.pause();
+        playPauseButton.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        `;
+        equalizer.style.visibility = 'hidden';
+        stopMusicNotes();
+      }
+      
+      // Previous song
+      function prevSong() {
+        currentSongIndex--;
+        if (currentSongIndex < 0) {
+          currentSongIndex = songs.length - 1;
+        }
+        loadSong(currentSongIndex);
+        if (isPlaying) {
+          playSong();
+        }
+      }
+      
+      // Next song
+      function nextSong() {
+        currentSongIndex++;
+        if (currentSongIndex > songs.length - 1) {
+          currentSongIndex = 0;
+        }
+        loadSong(currentSongIndex);
+        if (isPlaying) {
+          playSong();
+        }
+      }
+      
+      // Update progress bar
+      function updateProgress() {
+        const { duration, currentTime } = audioPlayer;
+        const progressPercent = (currentTime / duration) * 100;
+        progressBar.style.width = `${progressPercent}%`;
+        progressBar.style.backgroundSize = `${progressPercent}% 100%`;
+      }
+      
+      // Set progress when clicking on progress bar
+      function setProgress(e) {
+        const width = this.clientWidth;
+        const clickX = e.offsetX;
+        const duration = audioPlayer.duration;
+        audioPlayer.currentTime = (clickX / width) * duration;
+      }
+      
+      // Update volume
+      function updateVolume() {
+        audioPlayer.volume = this.value / 100;
+        this.style.backgroundSize = `${this.value}% 100%`;
+      }
+      
+      // Music notes animation
+      let musicNotesInterval;
+      
+      function startMusicNotes() {
+        if (musicNotesInterval) return;
+        
+        const musicNotes = ['♩', '♪', '♫', '♬', '🎵', '🎶'];
+        
+        musicNotesInterval = setInterval(() => {
+          const musicNote = document.createElement('div');
+          musicNote.classList.add('music-note');
+          musicNote.textContent = musicNotes[Math.floor(Math.random() * musicNotes.length)];
+          
+          // Random position and timing
+          musicNote.style.left = Math.random() * 100 + 'vw';
+          musicNote.style.animationDuration = Math.random() * 5 + 5 + 's';
+          musicNote.style.opacity = Math.random() * 0.5 + 0.3;
+          musicNote.style.fontSize = Math.random() * 20 + 15 + 'px';
+          
+          musicNotesContainer.appendChild(musicNote);
+          
+          // Remove note after animation completes
+          setTimeout(() => {
+            musicNote.remove();
+          }, 10000);
+        }, 800);
+      }
+      
+      function stopMusicNotes() {
+        clearInterval(musicNotesInterval);
+        musicNotesInterval = null;
+      }
+      
+      // Event listeners
+      playPauseButton.addEventListener('click', togglePlay);
+      prevButton.addEventListener('click', prevSong);
+      nextButton.addEventListener('click', nextSong);
+      volumeSlider.addEventListener('input', updateVolume);
+      document.querySelector('.progress-container').addEventListener('click', setProgress);
+      
+      // Play song from playlist
+      songItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+          currentSongIndex = index;
+          loadSong(currentSongIndex);
+          playSong();
+        });
+      });
+      
+      // Initialize player
+      initPlayer();
+    });
+  </script>
+</div>
+</element><element id="c33560bd-a21c-44d2-b48f-498e1bddc3f7" data-section-id="c33560bd-a21c-44d2-b48f-498e1bddc3f7">
+
+
+<div id="root">
+  <section id="balloon-animation" class="py-20 px-4 bg-neutral-800 relative overflow-hidden">
+    <div class="container mx-auto max-w-4xl text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-pink-400 mb-8 font-dancing-script animate__animated animate__heartBeat">Balloons for Your Special Day!</h2>
+      
+      <div class="balloon-launcher-container relative mx-auto mb-12 h-96 bg-neutral-900 rounded-xl overflow-hidden shadow-lg shadow-pink-500/20">
+        <div id="balloon-canvas" class="absolute inset-0 w-full h-full"></div>
+        
+        <div class="absolute bottom-8 left-0 right-0 flex justify-center z-10">
+          <button id="launch-balloons" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full transform transition duration-300 hover:scale-105 shadow-lg font-montserrat animate__animated animate__pulse animate__infinite">
+            Launch More Balloons!
+          </button>
+        </div>
+        
+        <div class="absolute top-4 right-4 flex space-x-2">
+          <button id="change-balloon-color" class="bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z" clip-rule="evenodd" />
+            </svg>
+          </button>
+          <button id="balloon-count-increase" class="bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+            </svg>
+          </button>
+          <button id="balloon-count-decrease" class="bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <div class="balloon-message bg-neutral-900 p-6 rounded-xl shadow-lg max-w-md mx-auto">
+        <p class="text-white font-montserrat mb-4">Each balloon carries a special wish for your birthday!</p>
+        <div class="balloon-counter flex items-center justify-center space-x-3">
+          <span class="text-pink-400 text-lg font-montserrat">Balloons launched:</span>
+          <span id="balloon-count" class="text-white text-xl font-bold font-montserrat">0</span>
+        </div>
+      </div>
+      
+      <!-- Hidden wishes that appear when clicking balloons -->
+      <div id="wish-popup" class="fixed inset-0 flex items-center justify-center z-50 pointer-events-none opacity-0 transition-opacity duration-500">
+        <div class="bg-pink-500 text-white p-6 rounded-xl shadow-2xl max-w-md text-center transform transition-transform duration-500 scale-0">
+          <h3 class="text-2xl font-bold mb-2 font-dancing-script" id="wish-text">Happy Birthday!</h3>
+          <p class="font-montserrat" id="wish-subtext">May your day be as special as you are!</p>
+        </div>
+      </div>
+    </div>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;600;700&display=swap');
+      @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+      
+      .font-dancing-script {
+        font-family: 'Dancing Script', cursive;
+      }
+      
+      .font-montserrat {
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+      /* Balloon styling */
+      .balloon {
+        position: absolute;
+        width: 40px;
+        height: 50px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        transform-origin: bottom center;
+        animation: float-balloon var(--float-duration, 8s) ease-in-out forwards,
+                   sway var(--sway-duration, 3s) ease-in-out infinite alternate;
+        z-index: 10;
+      }
+      
+      .balloon:after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.5);
+        bottom: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      @keyframes float-balloon {
+        0% {
+          transform: translateY(100%) rotate(var(--rotation, 0deg));
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(calc(-100vh - 100px)) rotate(var(--rotation, 0deg));
+          opacity: 0;
+        }
+      }
+      
+      @keyframes sway {
+        0% {
+          margin-left: calc(var(--sway-amount, 15px) * -1);
+        }
+        100% {
+          margin-left: var(--sway-amount, 15px);
+        }
+      }
+      
+      /* Balloon pop effect */
+      @keyframes pop {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        20% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(0);
+          opacity: 0;
+        }
+      }
+      
+      .balloon-popping {
+        animation: pop 0.3s ease-out forwards !important;
+      }
+      
+      /* Confetti effect */
+      .confetti {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        opacity: 0.7;
+        border-radius: 0;
+        animation: confetti-fall var(--fall-duration, 3s) linear forwards,
+                   confetti-spin var(--spin-duration, 2s) linear infinite;
+      }
+      
+      @keyframes confetti-fall {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.7;
+        }
+        100% {
+          transform: translateY(var(--fall-distance, 500px)) rotate(360deg);
+          opacity: 0;
+        }
+      }
+      
+      @keyframes confetti-spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const balloonCanvas = document.getElementById('balloon-canvas');
+        const launchButton = document.getElementById('launch-balloons');
+        const balloonCount = document.getElementById('balloon-count');
+        const changeColorButton = document.getElementById('change-balloon-color');
+        const increaseCountButton = document.getElementById('balloon-count-increase');
+        const decreaseCountButton = document.getElementById('balloon-count-decrease');
+        const wishPopup = document.getElementById('wish-popup');
+        const wishText = document.getElementById('wish-text');
+        const wishSubtext = document.getElementById('wish-subtext');
+        
+        // Configuration
+        let totalBalloons = 0;
+        let balloonsPerBatch = 8;
+        let balloonColors = ['#FF69B4', '#FF1493', '#FFC0CB', '#FF77FF', '#FF5CAD', '#FFB6C1', '#FF82AB'];
+        let currentColorIndex = 0;
+        
+        // Birthday wishes
+        const birthdayWishes = [
+          { wish: "Happy Birthday!", subtext: "May your day be filled with love and joy!" },
+          { wish: "Sending Love!", subtext: "You deserve all the happiness in the world." },
+          { wish: "You're Amazing!", subtext: "Thank you for being you." },
+          { wish: "Make a Wish!", subtext: "May all your dreams come true." },
+          { wish: "Special Day, Special Person", subtext: "Celebrating the wonderful you!" },
+          { wish: "Hugs & Kisses", subtext: "Sending you lots of love on your birthday." },
+          { wish: "Another Amazing Year!", subtext: "Here's to making more beautiful memories together." },
+          { wish: "Sparkle & Shine", subtext: "Today is your day to shine bright!" }
+        ];
+        
+        // Balloon SVG generator
+        function getBalloonSvg(color) {
+          return `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 200"><path d="M50,0 C22.4,0 0,22.4 0,50 C0,77.6 22.4,120 50,120 C77.6,120 100,77.6 100,50 C100,22.4 77.6,0 50,0 Z" fill="${color.replace('#', '%23')}"/><path d="M55,120 L45,120 L40,200 L60,200 Z" fill="%23FFC107"/></svg>`;
+        }
+        
+        // Launch balloons
+        function launchBalloons(count = balloonsPerBatch) {
+          for (let i = 0; i < count; i++) {
+            setTimeout(() => {
+              const balloon = document.createElement('div');
+              balloon.classList.add('balloon');
+              
+              // Random color from palette
+              const randomColorIndex = Math.floor(Math.random() * balloonColors.length);
+              const balloonColor = balloonColors[randomColorIndex];
+              
+              // Set balloon properties
+              balloon.style.backgroundImage = `url('${getBalloonSvg(balloonColor)}')`;
+              balloon.style.left = `${Math.random() * 90 + 5}%`;
+              balloon.style.bottom = '-50px';
+              balloon.style.setProperty('--float-duration', `${Math.random() * 3 + 7}s`);
+              balloon.style.setProperty('--sway-duration', `${Math.random() * 2 + 2}s`);
+              balloon.style.setProperty('--sway-amount', `${Math.random() * 15 + 5}px`);
+              balloon.style.setProperty('--rotation', `${Math.random() * 20 - 10}deg`);
+              
+              // Add balloon click handler
+              balloon.addEventListener('click', function(e) {
+                popBalloon(balloon, e);
+              });
+              
+              balloonCanvas.appendChild(balloon);
+              
+              // Remove balloon after animation completes
+              setTimeout(() => {
+                if (balloon && balloon.parentNode) {
+                  balloon.parentNode.removeChild(balloon);
+                }
+              }, 10000);
+              
+              // Update count
+              totalBalloons++;
+              balloonCount.textContent = totalBalloons;
+            }, i * 200); // Launch balloons with a slight delay between each
+          }
+        }
+        
+        // Pop balloon when clicked
+        function popBalloon(balloon, event) {
+          // Stop the event from propagating
+          event.stopPropagation();
+          
+          // Add popping animation
+          balloon.classList.add('balloon-popping');
+          
+          // Create confetti effect
+          createConfetti(balloon.getBoundingClientRect(), 20);
+          
+          // Show random wish
+          showRandomWish();
+          
+          // Remove balloon after animation
+          setTimeout(() => {
+            if (balloon && balloon.parentNode) {
+              balloon.parentNode.removeChild(balloon);
+            }
+          }, 300);
+        }
+        
+        // Create confetti particles when balloon pops
+        function createConfetti(position, count) {
+          const confettiColors = ['#FF69B4', '#FF1493', '#FFC0CB', '#FFB6C1', '#FFC0CB', '#FFFFFF'];
+          
+          for (let i = 0; i < count; i++) {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            
+            // Random properties
+            const randomColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+            const size = Math.random() * 8 + 4;
+            const shape = Math.random() > 0.5 ? '50%' : '0';
+            
+            confetti.style.backgroundColor = randomColor;
+            confetti.style.width = `${size}px`;
+            confetti.style.height = `${size}px`;
+            confetti.style.left = `${position.left + position.width/2 + (Math.random() * 40 - 20)}px`;
+            confetti.style.top = `${position.top + position.height/2}px`;
+            confetti.style.borderRadius = shape;
+            confetti.style.setProperty('--fall-duration', `${Math.random() * 2 + 1}s`);
+            confetti.style.setProperty('--spin-duration', `${Math.random() * 2 + 1}s`);
+            confetti.style.setProperty('--fall-distance', `${Math.random() * 200 + 100}px`);
+            
+            document.body.appendChild(confetti);
+            
+            // Remove confetti after animation
+            setTimeout(() => {
+              if (confetti && confetti.parentNode) {
+                confetti.parentNode.removeChild(confetti);
+              }
+            }, 3000);
+          }
+        }
+        
+        // Show random wish popup
+        function showRandomWish() {
+          const randomWish = birthdayWishes[Math.floor(Math.random() * birthdayWishes.length)];
+          wishText.textContent = randomWish.wish;
+          wishSubtext.textContent = randomWish.subtext;
+          
+          // Show popup
+          wishPopup.style.opacity = '1';
+          wishPopup.style.pointerEvents = 'auto';
+          wishPopup.querySelector('div').style.transform = 'scale(1)';
+          
+          // Hide popup after delay
+          setTimeout(() => {
+            wishPopup.style.opacity = '0';
+            wishPopup.style.pointerEvents = 'none';
+            wishPopup.querySelector('div').style.transform = 'scale(0)';
+          }, 2000);
+        }
+        
+        // Change balloon color palette
+        function changeColorPalette() {
+          const colorPalettes = [
+            ['#FF69B4', '#FF1493', '#FFC0CB', '#FF77FF', '#FF5CAD'], // Pink
+            ['#FF6B6B', '#FF8E8E', '#FFA5A5', '#FFCBC0', '#FF5252'], // Red
+            ['#64B5F6', '#42A5F5', '#2196F3', '#90CAF9', '#1976D2'], // Blue
+            ['#81C784', '#66BB6A', '#4CAF50', '#A5D6A7', '#388E3C'], // Green
+            ['#FFD54F', '#FFCA28', '#FFC107', '#FFE082', '#FFA000']  // Yellow
+          ];
+          
+          currentColorIndex = (currentColorIndex + 1) % colorPalettes.length;
+          balloonColors = colorPalettes[currentColorIndex];
+          
+          // Visual feedback for color change
+          changeColorButton.classList.add('animate__animated', 'animate__rubberBand');
+          setTimeout(() => {
+            changeColorButton.classList.remove('animate__animated', 'animate__rubberBand');
+          }, 1000);
+        }
+        
+        // Event listeners
+        launchButton.addEventListener('click', () => {
+          launchBalloons();
+          launchButton.classList.add('animate__animated', 'animate__rubberBand');
+          setTimeout(() => {
+            launchButton.classList.remove('animate__animated', 'animate__rubberBand');
+          }, 1000);
+        });
+        
+        changeColorButton.addEventListener('click', changeColorPalette);
+        
+        increaseCountButton.addEventListener('click', () => {
+          if (balloonsPerBatch < 20) {
+            balloonsPerBatch += 2;
+            increaseCountButton.classList.add('animate__animated', 'animate__bounceIn');
+            setTimeout(() => {
+              increaseCountButton.classList.remove('animate__animated', 'animate__bounceIn');
+            }, 1000);
+          }
+        });
+        
+        decreaseCountButton.addEventListener('click', () => {
+          if (balloonsPerBatch > 2) {
+            balloonsPerBatch -= 2;
+            decreaseCountButton.classList.add('animate__animated', 'animate__bounceIn');
+            setTimeout(() => {
+              decreaseCountButton.classList.remove('animate__animated', 'animate__bounceIn');
+            }, 1000);
+          }
+        });
+        
+        // Initial balloon launch
+        setTimeout(() => {
+          launchBalloons(5);
+        }, 1000);
+      });
+    </script>
+  </section>
+</div>
+</element><element id="8006a80e-42b1-4a57-889e-c58b2993295b" data-section-id="8006a80e-42b1-4a57-889e-c58b2993295b">
+
+
+<div id="root">
+  <section id="birthday-message" class="py-20 px-4 bg-neutral-900 relative overflow-hidden">
+    <div class="container mx-auto max-w-4xl">
+      <div class="message-card relative z-10 bg-white rounded-xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:shadow-pink-500/30 p-8 text-center max-w-2xl mx-auto">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-24 h-24 bg-pink-200 opacity-30 rounded-br-full"></div>
+        <div class="absolute bottom-0 right-0 w-24 h-24 bg-pink-200 opacity-30 rounded-tl-full"></div>
+        
+        <div class="message-container py-8 relative">
+          <h2 class="text-4xl font-bold mb-8 text-pink-500 font-dancing-script animate__animated animate__heartBeat">Dear Madamji</h2>
+          
+          <div class="message-content relative bg-pink-50 p-6 rounded-lg border-2 border-pink-200 mb-8">
+            <div class="message-decorations absolute -top-2 -left-2 w-4 h-4 bg-pink-400 rounded-full"></div>
+            <div class="message-decorations absolute -top-2 -right-2 w-4 h-4 bg-pink-400 rounded-full"></div>
+            <div class="message-decorations absolute -bottom-2 -left-2 w-4 h-4 bg-pink-400 rounded-full"></div>
+            <div class="message-decorations absolute -bottom-2 -right-2 w-4 h-4 bg-pink-400 rounded-full"></div>
+            
+            <p class="text-lg text-neutral-700 font-montserrat leading-relaxed">
+              Every moment with you is a beautiful memory in the making. You are my sunshine, my happiness, and the reason I smile every day. On this special day, I just want to remind you how incredibly special you are to me. I love you more than words can say. May your day be filled with love, laughter, and everything that makes your heart happy. 💕✨
+            </p>
+          </div>
+          
+          <div class="message-signature text-right mt-8">
+            <p class="text-xl text-pink-500 font-dancing-script">With all my love,</p>
+            <p class="text-2xl font-bold text-pink-600 font-dancing-script mt-2">❤️</p>
+          </div>
+        </div>
+        
+        <div class="message-actions flex justify-center mt-6 space-x-4">
+          <button id="glow-button" class="px-6 py-3 bg-pink-500 text-white rounded-full font-bold font-montserrat hover:bg-pink-600 transition-colors duration-300 shadow-md hover:shadow-lg relative overflow-hidden group">
+            <span class="relative z-10">Make It Glow</span>
+            <span class="absolute inset-0 bg-gradient-to-r from-pink-400 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          </button>
+          
+          <button id="read-again-button" class="px-6 py-3 bg-neutral-200 text-neutral-700 rounded-full font-bold font-montserrat hover:bg-neutral-300 transition-colors duration-300 shadow-md hover:shadow-lg">
+            Read Again
+          </button>
+        </div>
+      </div>
+      
+      <!-- Floating elements -->
+      <div id="floating-hearts" class="absolute inset-0 pointer-events-none"></div>
+    </div>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;600;700&display=swap');
+      @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+      
+      .font-dancing-script {
+        font-family: 'Dancing Script', cursive;
+      }
+      
+      .font-montserrat {
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+      /* Floating heart animation */
+      .floating-heart {
+        position: absolute;
+        font-size: 24px;
+        opacity: 0;
+        will-change: transform;
+        animation: float-heart 6s ease-in forwards;
+      }
+      
+      @keyframes float-heart {
+        0% {
+          transform: translateY(0) scale(0.5);
+          opacity: 0;
+        }
+        20% {
+          opacity: 0.8;
+        }
+        80% {
+          opacity: 0.8;
+        }
+        100% {
+          transform: translateY(-100px) scale(1.5);
+          opacity: 0;
+        }
+      }
+      
+      /* Glow effect for the message */
+      .message-glow {
+        animation: message-glow-animation 2s ease-in-out infinite alternate;
+      }
+      
+      @keyframes message-glow-animation {
+        from {
+          box-shadow: 0 0 10px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #FF1493;
+        }
+        to {
+          box-shadow: 0 0 20px #FF69B4, 0 0 30px #FF69B4, 0 0 40px #FF1493;
+        }
+      }
+      
+      /* Typing effect animation */
+      .typing-effect {
+        overflow: hidden;
+        border-right: 3px solid #FF69B4;
+        white-space: nowrap;
+        margin: 0 auto;
+        animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+      }
+      
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+      }
+      
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: #FF69B4; }
+      }
+    </style>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const messageCard = document.querySelector('.message-card');
+        const messageContent = document.querySelector('.message-content p');
+        const glowButton = document.getElementById('glow-button');
+        const readAgainButton = document.getElementById('read-again-button');
+        const floatingHeartsContainer = document.getElementById('floating-hearts');
+        
+        // Original message
+        const originalMessage = messageContent.textContent.trim();
+        
+        // Create floating hearts periodically
+        function createFloatingHeart() {
+          const heart = document.createElement('div');
+          heart.classList.add('floating-heart');
+          heart.innerHTML = '❤️';
+          heart.style.left = Math.random() * 100 + '%';
+          heart.style.bottom = '0';
+          heart.style.opacity = '0';
+          heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+          
+          floatingHeartsContainer.appendChild(heart);
+          
+          // Remove heart after animation completes
+          setTimeout(() => {
+            heart.remove();
+          }, 6000);
+        }
+        
+        // Start floating hearts when page loads
+        setInterval(createFloatingHeart, 1000);
+        
+        // Toggle glow effect on message card
+        glowButton.addEventListener('click', function() {
+          messageCard.classList.toggle('message-glow');
+          
+          if (messageCard.classList.contains('message-glow')) {
+            glowButton.querySelector('span').textContent = 'Turn Off Glow';
+            
+            // Create a burst of hearts
+            for (let i = 0; i < 20; i++) {
+              setTimeout(() => {
+                createFloatingHeart();
+              }, i * 100);
+            }
+          } else {
+            glowButton.querySelector('span').textContent = 'Make It Glow';
+          }
+          
+          // Add animation to button
+          this.classList.add('animate__animated', 'animate__rubberBand');
+          setTimeout(() => {
+            this.classList.remove('animate__animated', 'animate__rubberBand');
+          }, 1000);
+        });
+        
+        // Apply typing effect when reading again
+        readAgainButton.addEventListener('click', function() {
+          // Clear current text
+          messageContent.textContent = '';
+          messageContent.classList.add('typing-effect');
+          
+          // Set typing width to 0 initially
+          messageContent.style.width = '0';
+          
+          // Animate in the message letter by letter
+          let i = 0;
+          const typingInterval = setInterval(() => {
+            if (i < originalMessage.length) {
+              messageContent.textContent += originalMessage.charAt(i);
+              i++;
+            } else {
+              clearInterval(typingInterval);
+              setTimeout(() => {
+                messageContent.classList.remove('typing-effect');
+                messageContent.style.width = '100%';
+              }, 1000);
+            }
+          }, 100);
+          
+          // Add animation to button
+          this.classList.add('animate__animated', 'animate__bounceIn');
+          setTimeout(() => {
+            this.classList.remove('animate__animated', 'animate__bounceIn');
+          }, 1000);
+          
+          // Make the heading bounce
+          document.querySelector('h2').classList.add('animate__animated', 'animate__bounce');
+          setTimeout(() => {
+            document.querySelector('h2').classList.remove('animate__animated', 'animate__bounce');
+          }, 1000);
+        });
+        
+        // Create initial hearts
+        for (let i = 0; i < 5; i++) {
+          setTimeout(() => {
+            createFloatingHeart();
+          }, i * 300);
+        }
+        
+        // Make message content interactive
+        messageContent.addEventListener('mouseenter', function() {
+          this.classList.add('animate__animated', 'animate__pulse');
+        });
+        
+        messageContent.addEventListener('mouseleave', function() {
+          this.classList.remove('animate__animated', 'animate__pulse');
+        });
+        
+        // Sparkle effect on hover for the signature
+        const signature = document.querySelector('.message-signature');
+        signature.addEventListener('mouseenter', function() {
+          createSparkleEffect(this);
+        });
+        
+        function createSparkleEffect(element) {
+          for (let i = 0; i < 15; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.position = 'absolute';
+            sparkle.style.width = '3px';
+            sparkle.style.height = '3px';
+            sparkle.style.borderRadius = '50%';
+            sparkle.style.backgroundColor = '#FFC0CB';
+            sparkle.style.boxShadow = '0 0 4px #FF69B4';
+            
+            const rect = element.getBoundingClientRect();
+            const offsetTop = window.pageYOffset + rect.top;
+            const offsetLeft = window.pageXOffset + rect.left;
+            
+            sparkle.style.top = (offsetTop + Math.random() * rect.height) + 'px';
+            sparkle.style.left = (offsetLeft + Math.random() * rect.width) + 'px';
+            
+            document.body.appendChild(sparkle);
+            
+            sparkle.animate([
+              { transform: 'scale(0)', opacity: 1 },
+              { transform: 'scale(1.5)', opacity: 0 }
+            ], {
+              duration: 600 + Math.random() * 400,
+              easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+            });
+            
+            setTimeout(() => {
+              sparkle.remove();
+            }, 1000);
+          }
+        }
+      });
+    </script>
+  </section>
+</div>
+</element><element id="108bf097-e91a-4cdc-972d-6bd453b40774" data-section-id="108bf097-e91a-4cdc-972d-6bd453b40774">
+
+
+<div id="root">
+  <section id="personal-note" class="py-20 px-4 bg-neutral-800 relative overflow-hidden">
+    <div class="container mx-auto max-w-4xl">
+      <!-- Decorative background elements -->
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="heart-decorations"></div>
+      </div>
+      
+      <div class="text-center mb-12 relative z-10">
+        <h2 class="text-4xl md:text-5xl font-bold text-pink-400 mb-6 font-dancing-script animate__animated animate__fadeIn">My Personal Note</h2>
+        <p class="text-white font-montserrat text-lg max-w-lg mx-auto">A few words from my heart to yours on your special day</p>
+      </div>
+      
+      <div class="envelope-container relative mx-auto max-w-lg">
+        <div class="envelope bg-neutral-900 p-6 rounded-xl shadow-2xl shadow-pink-500/20 transform transition-all duration-500 hover:shadow-pink-500/40">
+          <div class="envelope-top flex justify-between items-center mb-6">
+            <div class="envelope-stamp bg-pink-500/20 rounded p-2 w-16 h-16 flex items-center justify-center">
+              <span class="text-2xl">❤️</span>
+            </div>
+            <div class="envelope-address text-right">
+              <p class="text-pink-300 font-dancing-script text-lg">To: The Special One</p>
+              <p class="text-white/60 text-sm font-montserrat">With Love</p>
+            </div>
+          </div>
+          
+          <div class="letter-preview bg-white/5 p-4 rounded-lg border border-pink-500/20 mb-6 backdrop-blur-sm">
+            <p class="text-white/80 font-montserrat truncate">Dear Madamji, You are very special to me...</p>
+            <div class="blur-overlay absolute inset-0 bg-neutral-800/80 backdrop-blur-md rounded-lg flex items-center justify-center">
+              <p class="text-pink-300 font-dancing-script text-xl animate__animated animate__pulse animate__infinite">Sealed with Love</p>
+            </div>
+          </div>
+          
+          <button id="open-letter" class="w-full py-3 px-6 bg-pink-500 text-white rounded-full font-bold hover:bg-pink-600 transition-colors duration-300 font-montserrat flex items-center justify-center gap-2 group">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76" />
+            </svg>
+            Open My Letter
+          </button>
+        </div>
+        
+        <!-- Letter content (initially hidden) -->
+        <div id="letter-content" class="letter-paper bg-white p-8 rounded-xl shadow-2xl mt-8 hidden transform transition-all duration-500 scale-95 opacity-0">
+          <div class="letter-header mb-6 border-b border-pink-200 pb-4">
+            <p class="text-neutral-500 font-montserrat text-right text-sm">On your special day</p>
+          </div>
+          
+          <h3 class="text-3xl font-bold mb-6 text-pink-500 font-dancing-script">Dear Madamji,</h3>
+          
+          <div class="letter-body font-montserrat text-neutral-700 space-y-4 mb-8">
+            <p>You are very special to me, you mean a lot, I love you and I will be there till your last breath.</p>
+            
+            <p>Every moment spent with you is a treasure that I hold close to my heart. Your smile brightens my day, your laughter is my favorite melody, and your presence in my life is the greatest gift.</p>
+            
+            <p>Today, as you celebrate another year of your beautiful life, I want you to know how much joy and love you bring into the world just by being you.</p>
+            
+            <p>May this birthday bring you all the happiness you deserve, and may the coming year be filled with wonderful moments and beautiful memories for us to share.</p>
+          </div>
+          
+          <div class="letter-footer mt-10 text-right">
+            <p class="text-pink-500 font-dancing-script text-xl mb-2">With all my love,</p>
+            <p class="text-2xl text-pink-600 font-dancing-script">❤️</p>
+          </div>
+          
+          <div class="letter-actions flex justify-center mt-8">
+            <button id="close-letter" class="py-2 px-6 bg-neutral-200 text-neutral-700 rounded-full font-bold hover:bg-neutral-300 transition-colors duration-300 font-montserrat text-sm">
+              Close Letter
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Floating polaroid images -->
+      <div class="polaroid-container flex flex-wrap justify-center gap-6 mt-16 relative z-10">
+        <div class="polaroid bg-white p-3 pt-3 pb-12 shadow-lg transform rotate-[-5deg] hover:rotate-0 transition-all duration-300 w-40 relative">
+          <div class="polaroid-image bg-pink-200 h-32 flex items-center justify-center">
+            <img src="Photo1.jpeg" alt="" class="w-full h-full object-cover rounded-md">
+          </div>
+          <p class="text-center text-neutral-700 mt-2 font-montserrat text-sm">Birthday Wishes</p>
+          <div class="absolute -bottom-2 -right-2 w-10 h-10 flex items-center justify-center">
+            <span class="text-xl animate__animated animate__heartBeat animate__infinite">❤️</span>
+          </div>
+        </div>
+        
+        <div class="polaroid bg-white p-3 pt-3 pb-12 shadow-lg transform rotate-[3deg] hover:rotate-0 transition-all duration-300 w-40 relative">
+          <div class="polaroid-image bg-pink-200 h-32 flex items-center justify-center">
+            <img src="Photo2.jpeg" alt="" class="w-full h-full object-cover rounded-md">
+          </div>
+          <p class="text-center text-neutral-700 mt-2 font-montserrat text-sm">Sweet Memories</p>
+          <div class="absolute -bottom-2 -right-2 w-10 h-10 flex items-center justify-center">
+            <span class="text-xl animate__animated animate__heartBeat animate__infinite">💖</span>
+          </div>
+        </div>
+        
+        <div class="polaroid bg-white p-3 pt-3 pb-12 shadow-lg transform rotate-[-2deg] hover:rotate-0 transition-all duration-300 w-40 relative">
+          <div class="polaroid-image bg-pink-200 h-32 flex items-center justify-center">
+            <img src="Photo3.jpeg" alt="" class="w-full h-full object-cover rounded-md">
+          </div>
+          <p class="text-center text-neutral-700 mt-2 font-montserrat text-sm">Special Moments</p>
+          <div class="absolute -bottom-2 -right-2 w-10 h-10 flex items-center justify-center">
+            <span class="text-xl animate__animated animate__heartBeat animate__infinite">💕</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;600;700&display=swap');
+      @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+      
+      .font-dancing-script {
+        font-family: 'Dancing Script', cursive;
+      }
+      
+      .font-montserrat {
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+      /* Floating hearts background */
+      .heart-decorations {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      
+      /* Heart decoration */
+      .heart {
+        position: absolute;
+        opacity: 0.2;
+        font-size: 20px;
+        animation: float-heart 15s linear infinite;
+      }
+      
+      @keyframes float-heart {
+        0% {
+          transform: translateY(100vh) translateX(0) scale(0.5);
+          opacity: 0.1;
+        }
+        100% {
+          transform: translateY(-20vh) translateX(20px) scale(1.5);
+          opacity: 0;
+        }
+      }
+      
+      /* Letter opening animation */
+      @keyframes letter-open {
+        0% {
+          transform: translateY(0) scale(0.95);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+      }
+      
+      .letter-opening {
+        animation: letter-open 0.8s forwards ease-out;
+      }
+      
+      /* Blur overlay */
+      .blur-overlay {
+        transition: opacity 0.5s ease-out;
+      }
+    </style>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const openLetterBtn = document.getElementById('open-letter');
+        const closeLetterBtn = document.getElementById('close-letter');
+        const letterContent = document.getElementById('letter-content');
+        const envelope = document.querySelector('.envelope');
+        const blurOverlay = document.querySelector('.blur-overlay');
+        const heartDecorations = document.querySelector('.heart-decorations');
+        
+        // Create floating hearts in background
+        function createHearts() {
+          const heartSymbols = ['❤️', '💖', '💕', '💗', '💓'];
+          
+          for (let i = 0; i < 20; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+            
+            // Random positioning and timing
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.opacity = `${Math.random() * 0.3}`;
+            heart.style.fontSize = `${Math.random() * 20 + 10}px`;
+            heart.style.animationDuration = `${Math.random() * 10 + 10}s`;
+            heart.style.animationDelay = `${Math.random() * 5}s`;
+            
+            heartDecorations.appendChild(heart);
+          }
+        }
+        
+        // Open letter animation
+        openLetterBtn.addEventListener('click', function() {
+          // Show letter with animation
+          letterContent.classList.remove('hidden');
+          letterContent.classList.add('letter-opening');
+          letterContent.style.display = 'block';
+          letterContent.style.opacity = '1';
+          letterContent.style.transform = 'scale(1)';
+          
+          // Add visual feedback to envelope
+          envelope.classList.add('animate__animated', 'animate__fadeOutUp');
+          setTimeout(() => {
+            envelope.style.visibility = 'hidden';
+          }, 800);
+          
+          // Create more floating hearts when letter opens
+          createMoreHearts();
+        });
+        
+        // Close letter animation
+        closeLetterBtn.addEventListener('click', function() {
+          // Hide letter with animation
+          letterContent.classList.remove('letter-opening');
+          letterContent.style.opacity = '0';
+          letterContent.style.transform = 'scale(0.95)';
+          
+          // Reset envelope
+          envelope.classList.remove('animate__animated', 'animate__fadeOutUp');
+          envelope.style.visibility = 'visible';
+          envelope.classList.add('animate__animated', 'animate__fadeInDown');
+          
+          setTimeout(() => {
+            letterContent.style.display = 'none';
+            envelope.classList.remove('animate__animated', 'animate__fadeInDown');
+          }, 500);
+        });
+        
+        // Create more hearts for special effect
+        function createMoreHearts() {
+          const heartSymbols = ['❤️', '💖', '💕', '💗', '💓'];
+          
+          for (let i = 0; i < 15; i++) {
+            setTimeout(() => {
+              const heart = document.createElement('div');
+              heart.classList.add('heart');
+              heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+              
+              // Position hearts to come from the envelope
+              const envelopeRect = envelope.getBoundingClientRect();
+              const startX = envelopeRect.left + envelopeRect.width / 2;
+              const startY = envelopeRect.top + envelopeRect.height / 2;
+              
+              heart.style.position = 'fixed';
+              heart.style.left = `${startX}px`;
+              heart.style.top = `${startY}px`;
+              heart.style.fontSize = `${Math.random() * 20 + 20}px`;
+              heart.style.opacity = '1';
+              heart.style.transform = 'scale(1)';
+              heart.style.zIndex = '100';
+              
+              document.body.appendChild(heart);
+              
+              // Animate the heart outward
+              heart.animate([
+                { transform: 'translate(0, 0) scale(0.5)', opacity: 0.7 },
+                { transform: `translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px) scale(1.5)`, opacity: 0 }
+              ], {
+                duration: 1500,
+                easing: 'cubic-bezier(0.2, 0.8, 0.2, 1)'
+              });
+              
+              // Remove the heart after animation
+              setTimeout(() => {
+                heart.remove();
+              }, 1500);
+            }, i * 100);
+          }
+        }
+        
+        // Initialize the hearts
+        createHearts();
+        
+        // Make polaroid images interactive
+        const polaroids = document.querySelectorAll('.polaroid');
+        polaroids.forEach(polaroid => {
+          polaroid.addEventListener('mouseenter', function() {
+            this.classList.add('animate__animated', 'animate__pulse');
+          });
+          
+          polaroid.addEventListener('mouseleave', function() {
+            this.classList.remove('animate__animated', 'animate__pulse');
+          });
+        });
+      });
+    </script>
+  </section>
+</div>
+</element><element id="3b89c2e8-261f-47be-8df0-01f302dbb0d7" data-section-id="3b89c2e8-261f-47be-8df0-01f302dbb0d7">
+
+
+<div id="root">
+  <section id="gallery" class="py-16 px-4 bg-neutral-900 relative overflow-hidden">
+    <div class="container mx-auto max-w-6xl">
+      <div class="text-center mb-12 relative z-10">
+        <h2 class="text-4xl md:text-5xl font-bold text-pink-400 mb-6 font-dancing-script animate__animated animate__fadeIn">Our Special Moments</h2>
+        <p class="text-white font-montserrat text-lg max-w-2xl mx-auto">A collection of memories to celebrate our journey together</p>
+      </div>
+      
+      <!-- Gallery Controls -->
+      <div class="gallery-controls flex flex-wrap justify-center gap-4 mb-8">
+        <button class="filter-btn active py-2 px-5 rounded-full bg-pink-500 text-white font-montserrat text-sm font-medium transition-all hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-400" data-filter="all">
+          All Memories
+        </button>
+        <button class="filter-btn py-2 px-5 rounded-full bg-neutral-800 text-white font-montserrat text-sm font-medium transition-all hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-400" data-filter="dates">
+          Special Dates
+        </button>
+        <button class="filter-btn py-2 px-5 rounded-full bg-neutral-800 text-white font-montserrat text-sm font-medium transition-all hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-400" data-filter="moments">
+          Cute Moments
+        </button>
+        <button class="filter-btn py-2 px-5 rounded-full bg-neutral-800 text-white font-montserrat text-sm font-medium transition-all hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-400" data-filter="fun">
+          Fun Times
+        </button>
+      </div>
+      
+      <!-- Gallery Grid -->
+      <div class="gallery-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- Image 1 -->
+        <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg cursor-pointer animate__animated animate__fadeIn" data-category="moments">
+          <div class="aspect-square bg-pink-200 flex items-center justify-center overflow-hidden">
+            <div class="memory-placeholder w-full h-full flex items-center justify-center bg-gradient-to-br from-pink-300 to-pink-500">
+              <img src="Photo4.jpeg" alt="">
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+          </div>
+        </div>
+        
+        <!-- Image 2 -->
+        <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg cursor-pointer animate__animated animate__fadeIn" data-category="dates">
+          <div class="aspect-square bg-pink-200 flex items-center justify-center overflow-hidden">
+            <div class="memory-placeholder w-full h-full flex items-center justify-center bg-gradient-to-br from-pink-400 to-pink-600">
+              <img src="Photo5.jpeg" alt="">
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+            
+          </div>
+        </div>
+        
+        <!-- Image 3 -->
+        <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg cursor-pointer animate__animated animate__fadeIn" data-category="fun">
+          <div class="aspect-square bg-pink-200 flex items-center justify-center overflow-hidden">
+            <div class="memory-placeholder w-full h-full flex items-center justify-center bg-gradient-to-br from-pink-300 to-pink-500">
+              <img src="Photo6.jpeg" alt="">
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+          
+          </div>
+        </div>
+        
+        <!-- Image 4 -->
+        <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg cursor-pointer animate__animated animate__fadeIn" data-category="moments">
+          <div class="aspect-square bg-pink-200 flex items-center justify-center overflow-hidden">
+            <div class="memory-placeholder w-full h-full flex items-center justify-center bg-gradient-to-br from-pink-400 to-pink-600">
+              <img src="Photo7.jpeg" alt="">
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+          
+          </div>
+        </div>
+        
+        <!-- Image 5 -->
+        <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg cursor-pointer animate__animated animate__fadeIn" data-category="dates">
+          <div class="aspect-square bg-pink-200 flex items-center justify-center overflow-hidden">
+            <div class="memory-placeholder w-full h-full flex items-center justify-center bg-gradient-to-br from-pink-300 to-pink-500">
+              <img src="Photo8.jpeg" alt="">
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+            
+          </div>
+        </div>
+        
+        <!-- Image 6 -->
+        <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg cursor-pointer animate__animated animate__fadeIn" data-category="fun">
+          <div class="aspect-square bg-pink-200 flex items-center justify-center overflow-hidden">
+            <div class="memory-placeholder w-full h-full flex items-center justify-center bg-gradient-to-br from-pink-400 to-pink-600">
+              <img src="Photo9.jpeg" alt="">
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+            
+          </div>
+        </div>
+        
+        <!-- Image 7 -->
+        <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg cursor-pointer animate__animated animate__fadeIn" data-category="moments">
+          <div class="aspect-square bg-pink-200 flex items-center justify-center overflow-hidden">
+            <div class="memory-placeholder w-full h-full flex items-center justify-center bg-gradient-to-br from-pink-300 to-pink-500">
+              <img src="Photo10.jpeg" alt="">
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+            
+          </div>
+        </div>
+        
+        <!-- Image 8 -->
+        <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg cursor-pointer animate__animated animate__fadeIn" data-category="fun">
+          <div class="aspect-square bg-pink-200 flex items-center justify-center overflow-hidden">
+            <div class="memory-placeholder w-full h-full flex items-center justify-center bg-gradient-to-br from-pink-400 to-pink-600">
+              <img src="Photo11.jpeg" alt="">
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+            
+          </div>
+        </div>
+      </div>
+      
+      <!-- Lightbox Modal -->
+      <div id="gallery-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-neutral-900/95 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="modal-content max-w-4xl w-full p-4">
+          <div class="relative">
+            <div id="modal-image-container" class="bg-neutral-800 rounded-lg overflow-hidden shadow-2xl">
+              <div class="aspect-video md:aspect-[4/3] bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center">
+                <span id="modal-emoji" class="text-9xl"></span>
+              </div>
+            </div>
+            <div class="bg-neutral-800 p-4 rounded-b-lg">
+              <h3 id="modal-title" class="text-white text-2xl font-dancing-script mb-2"></h3>
+              <p id="modal-description" class="text-neutral-300 font-montserrat"></p>
+            </div>
+            <button id="close-modal" class="absolute top-2 right-2 bg-pink-500 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-pink-600 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          
+          <div class="gallery-navigation flex justify-between mt-4">
+            <button id="prev-image" class="bg-neutral-800 hover:bg-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button id="next-image" class="bg-neutral-800 hover:bg-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Add Memory Button -->
+      <div class="text-center mt-12">
+        <button id="add-memory-button" class="bg-pink-500 hover:bg-pink-600 text-white py-3 px-8 rounded-full font-montserrat font-bold transition-colors duration-300 animate__animated animate__pulse animate__infinite shadow-lg shadow-pink-500/20">
+          Add a New Memory ✨
+        </button>
+      </div>
+    </div>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;600;700&display=swap');
+      @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+      
+      .font-dancing-script {
+        font-family: 'Dancing Script', cursive;
+      }
+      
+      .font-montserrat {
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+      /* Filter button styles */
+      .filter-btn.active {
+        background-color: #FF1493;
+        box-shadow: 0 0 15px rgba(255, 20, 147, 0.4);
+      }
+      
+      /* Gallery item animation */
+      .gallery-item {
+        transition: all 0.3s ease-in-out;
+      }
+      
+      .gallery-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2);
+      }
+      
+      /* Memory placeholder gradient animation */
+      .memory-placeholder {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .memory-placeholder::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          to bottom right, 
+          rgba(255, 255, 255, 0) 0%, 
+          rgba(255, 255, 255, 0.1) 50%, 
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: rotate(30deg);
+        animation: shine 8s infinite;
+      }
+      
+      @keyframes shine {
+        0% { transform: translateX(-100%) rotate(30deg); }
+        20%, 100% { transform: translateX(100%) rotate(30deg); }
+      }
+      
+      /* Modal fade animation */
+      .modal-fade-in {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      
+      /* Animation for gallery items appearing */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translate3d(0, 30px, 0);
+        }
+        to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      
+      .fadeInUp {
+        animation-name: fadeInUp;
+      }
+    </style>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Elements
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const gallery = document.querySelector('.gallery-grid');
+        const modal = document.getElementById('gallery-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+        const modalEmoji = document.getElementById('modal-emoji');
+        const closeModalBtn = document.getElementById('close-modal');
+        const prevBtn = document.getElementById('prev-image');
+        const nextBtn = document.getElementById('next-image');
+        const addMemoryBtn = document.getElementById('add-memory-button');
+        
+        let currentIndex = 0;
+        
+        // Initialize Isotope for filtering (simulated with basic JS)
+        let currentFilter = 'all';
+        
+        // Filter button click event
+        filterButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const filterValue = this.getAttribute('data-filter');
+            
+            // Update active class
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            currentFilter = filterValue;
+            
+            // Filter items
+            filterGalleryItems(filterValue);
+            
+            // Animation for the filtering
+            animateFilteredItems();
+          });
+        });
+        
+        // Function to filter gallery items
+        function filterGalleryItems(filter) {
+          galleryItems.forEach(item => {
+            const category = item.getAttribute('data-category');
+            if (filter === 'all' || filter === category) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        }
+        
+        // Function to animate filtered items
+        function animateFilteredItems() {
+          const visibleItems = Array.from(galleryItems).filter(item => 
+            item.style.display !== 'none'
+          );
+          
+          visibleItems.forEach((item, index) => {
+            item.classList.remove('animate__fadeIn');
+            void item.offsetWidth; // Trigger reflow
+            item.classList.add('animate__animated', 'animate__fadeIn');
+            item.style.animationDelay = `${index * 0.1}s`;
+          });
+        }
+        
+        // Gallery item click event
+        galleryItems.forEach((item, index) => {
+          item.addEventListener('click', function() {
+            openModal(index);
+          });
+        });
+        
+        // Open modal with image details
+        function openModal(index) {
+          const item = galleryItems[index];
+          const title = item.querySelector('h3').textContent;
+          const description = item.querySelector('p').textContent;
+          const emoji = item.querySelector('.memory-placeholder span').textContent;
+          
+          modalTitle.textContent = title;
+          modalDescription.textContent = description;
+          modalEmoji.textContent = emoji;
+          
+          currentIndex = index;
+          
+          // Show modal
+          modal.classList.add('modal-fade-in');
+          document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+        
+        // Close modal
+        closeModalBtn.addEventListener('click', function() {
+          modal.classList.remove('modal-fade-in');
+          document.body.style.overflow = ''; // Re-enable scrolling
+        });
+        
+        // Modal keyboard navigation
+        document.addEventListener('keydown', function(e) {
+          if (!modal.classList.contains('modal-fade-in')) return;
+          
+          if (e.key === 'Escape') {
+            modal.classList.remove('modal-fade-in');
+            document.body.style.overflow = '';
+          } else if (e.key === 'ArrowRight') {
+            navigateGallery('next');
+          } else if (e.key === 'ArrowLeft') {
+            navigateGallery('prev');
+          }
+        });
+        
+        // Previous image
+        prevBtn.addEventListener('click', function() {
+          navigateGallery('prev');
+        });
+        
+        // Next image
+        nextBtn.addEventListener('click', function() {
+          navigateGallery('next');
+        });
+        
+        // Navigate gallery
+        function navigateGallery(direction) {
+          let newIndex;
+          const visibleItems = Array.from(galleryItems).filter(item => {
+            const category = item.getAttribute('data-category');
+            return currentFilter === 'all' || currentFilter === category;
+          });
+          
+          const visibleIndices = visibleItems.map(item => 
+            Array.from(galleryItems).indexOf(item)
+          );
+          
+          const currentVisibleIndex = visibleIndices.indexOf(currentIndex);
+          
+          if (direction === 'next') {
+            const nextVisibleIndex = (currentVisibleIndex + 1) % visibleIndices.length;
+            newIndex = visibleIndices[nextVisibleIndex];
+          } else {
+            const prevVisibleIndex = (currentVisibleIndex - 1 + visibleIndices.length) % visibleIndices.length;
+            newIndex = visibleIndices[prevVisibleIndex];
+          }
+          
+          openModal(newIndex);
+          
+          // Add animation for smooth transition
+          const modalContent = modal.querySelector('.modal-content');
+          modalContent.classList.add('animate__animated', 'animate__fadeIn');
+          setTimeout(() => {
+            modalContent.classList.remove('animate__animated', 'animate__fadeIn');
+          }, 500);
+        }
+        
+        // Add Memory Button (simulated functionality)
+        addMemoryBtn.addEventListener('click', function() {
+          addMemoryBtn.textContent = 'Feature Coming Soon! ✨';
+          addMemoryBtn.classList.add('animate__animated', 'animate__rubberBand');
+          
+          setTimeout(() => {
+            addMemoryBtn.textContent = 'Add a New Memory ✨';
+            addMemoryBtn.classList.remove('animate__animated', 'animate__rubberBand');
+          }, 2000);
+        });
+        
+        // Animate gallery items on page load
+        window.addEventListener('load', function() {
+          galleryItems.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.1}s`;
+          });
+        });
+        
+        // Initialize
+        filterGalleryItems('all');
+      });
+    </script>
+  </section>
+</div>
+</element><element id="1096e727-54fa-44e8-83d7-c926a5599461" data-section-id="1096e727-54fa-44e8-83d7-c926a5599461">
+
+
+<div id="root">
+  <section id="wishes" class="py-20 px-4 bg-neutral-800 relative overflow-hidden">
+    <div class="container mx-auto max-w-6xl">
+      <div class="text-center mb-12 relative z-10">
+        <h2 class="text-4xl md:text-5xl font-bold text-pink-400 mb-6 font-dancing-script animate__animated animate__fadeIn">Birthday Wishes</h2>
+        <p class="text-white font-montserrat text-lg max-w-2xl mx-auto">Special messages for your special day</p>
+      </div>
+      
+      <!-- Decorative elements -->
+      <div class="wish-decorations absolute inset-0 pointer-events-none">
+        <div class="stars"></div>
+      </div>
+      
+      <!-- Wish cards carousel -->
+      <div class="relative wish-carousel-container max-w-4xl mx-auto">
+        <div class="wish-carousel overflow-hidden">
+          <div class="wish-track flex transition-transform duration-500" id="wish-track">
+            <!-- Wish 1 -->
+            <div class="wish-card min-w-full md:min-w-[50%] lg:min-w-[33.33%] p-4">
+              <div class="bg-white rounded-xl shadow-lg p-6 h-full transform transition-transform duration-300 hover:scale-105 hover:shadow-pink-500/30">
+                <div class="wish-header mb-4 flex items-center justify-between">
+                  <div class="wish-icon w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center text-pink-500 text-xl">
+                    <span>✨</span>
+                  </div>
+                  <div class="wish-date text-neutral-400 text-sm font-montserrat">Today</div>
+                </div>
+                <div class="wish-content">
+                  <h3 class="text-xl text-pink-500 font-dancing-script mb-3">Happy Birthday!</h3>
+                  <p class="text-neutral-700 font-montserrat">May your day be as beautiful as your smile and as lovely as your heart. Wishing you all the joy your heart can hold!</p>
+                </div>
+                <div class="wish-footer mt-4 text-right">
+                  <p class="text-pink-400 font-dancing-script text-lg">With love</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Wish 2 -->
+            <div class="wish-card min-w-full md:min-w-[50%] lg:min-w-[33.33%] p-4">
+              <div class="bg-white rounded-xl shadow-lg p-6 h-full transform transition-transform duration-300 hover:scale-105 hover:shadow-pink-500/30">
+                <div class="wish-header mb-4 flex items-center justify-between">
+                  <div class="wish-icon w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center text-pink-500 text-xl">
+                    <span>🎂</span>
+                  </div>
+                  <div class="wish-date text-neutral-400 text-sm font-montserrat">Today</div>
+                </div>
+                <div class="wish-content">
+                  <h3 class="text-xl text-pink-500 font-dancing-script mb-3">Sweet Celebration</h3>
+                  <p class="text-neutral-700 font-montserrat">Another year of being amazing! Your presence in my life makes everything brighter. Enjoy your special day!</p>
+                </div>
+                <div class="wish-footer mt-4 text-right">
+                  <p class="text-pink-400 font-dancing-script text-lg">Forever yours</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Wish 3 -->
+            <div class="wish-card min-w-full md:min-w-[50%] lg:min-w-[33.33%] p-4">
+              <div class="bg-white rounded-xl shadow-lg p-6 h-full transform transition-transform duration-300 hover:scale-105 hover:shadow-pink-500/30">
+                <div class="wish-header mb-4 flex items-center justify-between">
+                  <div class="wish-icon w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center text-pink-500 text-xl">
+                    <span>💖</span>
+                  </div>
+                  <div class="wish-date text-neutral-400 text-sm font-montserrat">Today</div>
+                </div>
+                <div class="wish-content">
+                  <h3 class="text-xl text-pink-500 font-dancing-script mb-3">My Heart's Wish</h3>
+                  <p class="text-neutral-700 font-montserrat">On your birthday, I wish you endless joy and love. May all your dreams turn into reality and may our love grow stronger each day.</p>
+                </div>
+                <div class="wish-footer mt-4 text-right">
+                  <p class="text-pink-400 font-dancing-script text-lg">Yours always</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Wish 4 -->
+            <div class="wish-card min-w-full md:min-w-[50%] lg:min-w-[33.33%] p-4">
+              <div class="bg-white rounded-xl shadow-lg p-6 h-full transform transition-transform duration-300 hover:scale-105 hover:shadow-pink-500/30">
+                <div class="wish-header mb-4 flex items-center justify-between">
+                  <div class="wish-icon w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center text-pink-500 text-xl">
+                    <span>🌟</span>
+                  </div>
+                  <div class="wish-date text-neutral-400 text-sm font-montserrat">Today</div>
+                </div>
+                <div class="wish-content">
+                  <h3 class="text-xl text-pink-500 font-dancing-script mb-3">You're a Star</h3>
+                  <p class="text-neutral-700 font-montserrat">You light up my world like no one else. Today we celebrate the amazing person you are. Happy Birthday, my love!</p>
+                </div>
+                <div class="wish-footer mt-4 text-right">
+                  <p class="text-pink-400 font-dancing-script text-lg">Loving you</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Wish 5 -->
+            <div class="wish-card min-w-full md:min-w-[50%] lg:min-w-[33.33%] p-4">
+              <div class="bg-white rounded-xl shadow-lg p-6 h-full transform transition-transform duration-300 hover:scale-105 hover:shadow-pink-500/30">
+                <div class="wish-header mb-4 flex items-center justify-between">
+                  <div class="wish-icon w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center text-pink-500 text-xl">
+                    <span>🎁</span>
+                  </div>
+                  <div class="wish-date text-neutral-400 text-sm font-montserrat">Today</div>
+                </div>
+                <div class="wish-content">
+                  <h3 class="text-xl text-pink-500 font-dancing-script mb-3">Birthday Blessings</h3>
+                  <p class="text-neutral-700 font-montserrat">May this year bring you countless opportunities, beautiful moments, and all the success you deserve. You are so special to me.</p>
+                </div>
+                <div class="wish-footer mt-4 text-right">
+                  <p class="text-pink-400 font-dancing-script text-lg">All my love</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Carousel controls -->
+        <button class="absolute top-1/2 left-2 -translate-y-1/2 bg-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink-600 transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-pink-400 md:left-0 -ml-5" id="prev-wish">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button class="absolute top-1/2 right-2 -translate-y-1/2 bg-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink-600 transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-pink-400 md:right-0 -mr-5" id="next-wish">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+        
+        <!-- Carousel indicators -->
+        <div class="carousel-indicators flex justify-center mt-6 gap-2">
+          <button class="w-3 h-3 rounded-full bg-pink-500 focus:outline-none" data-index="0"></button>
+          <button class="w-3 h-3 rounded-full bg-pink-300 focus:outline-none" data-index="1"></button>
+          <button class="w-3 h-3 rounded-full bg-pink-300 focus:outline-none" data-index="2"></button>
+        </div>
+      </div>
+      
+      <!-- Add a wish section -->
+      <div class="add-wish-section mt-16 bg-neutral-900 rounded-xl p-8 max-w-2xl mx-auto shadow-lg">
+        <h3 class="text-2xl text-pink-400 font-dancing-script mb-6 text-center">Add Your Own Wish</h3>
+        
+        <form id="wish-form" class="space-y-4">
+          <div>
+            <label for="wish-name" class="text-white font-montserrat mb-1 block">Your Name</label>
+            <input type="text" id="wish-name" class="w-full px-4 py-2 rounded-lg bg-neutral-800 text-white border border-pink-500/30 focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/50" placeholder="Enter your name">
+          </div>
+          
+          <div>
+            <label for="wish-message" class="text-white font-montserrat mb-1 block">Your Wish</label>
+            <textarea id="wish-message" rows="4" class="w-full px-4 py-2 rounded-lg bg-neutral-800 text-white border border-pink-500/30 focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/50" placeholder="Write your birthday wish here..."></textarea>
+          </div>
+          
+          <div class="emoji-picker flex flex-wrap gap-2 justify-center mt-4">
+            <button type="button" class="emoji-btn w-10 h-10 rounded-full bg-neutral-800 hover:bg-pink-500 flex items-center justify-center text-xl transition-colors">❤️</button>
+            <button type="button" class="emoji-btn w-10 h-10 rounded-full bg-neutral-800 hover:bg-pink-500 flex items-center justify-center text-xl transition-colors">🎂</button>
+            <button type="button" class="emoji-btn w-10 h-10 rounded-full bg-neutral-800 hover:bg-pink-500 flex items-center justify-center text-xl transition-colors">🎁</button>
+            <button type="button" class="emoji-btn w-10 h-10 rounded-full bg-neutral-800 hover:bg-pink-500 flex items-center justify-center text-xl transition-colors">✨</button>
+            <button type="button" class="emoji-btn w-10 h-10 rounded-full bg-neutral-800 hover:bg-pink-500 flex items-center justify-center text-xl transition-colors">🎈</button>
+          </div>
+          
+          <div class="text-center mt-6">
+            <button type="submit" class="px-8 py-3 bg-pink-500 text-white rounded-full font-bold hover:bg-pink-600 transition-colors shadow-lg hover:shadow-pink-500/30 transform hover:scale-105 transition-transform font-montserrat animate__animated animate__pulse animate__infinite">
+              Send Your Wish
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;600;700&display=swap');
+      @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+      
+      .font-dancing-script {
+        font-family: 'Dancing Script', cursive;
+      }
+      
+      .font-montserrat {
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+      /* Star background */
+      .stars {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      
+      .star {
+        position: absolute;
+        background-color: #FFF;
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        opacity: 0.5;
+        animation: twinkle var(--duration, 4s) infinite ease-in-out;
+        animation-delay: var(--delay, 0s);
+      }
+      
+      @keyframes twinkle {
+        0%, 100% {
+          opacity: 0.2;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.7;
+          transform: scale(1.5);
+        }
+      }
+      
+      /* Carousel styling */
+      .wish-carousel {
+        scroll-behavior: smooth;
+      }
+      
+      /* Emoji button active state */
+      .emoji-btn.active {
+        background-color: #FF1493;
+        transform: scale(1.1);
+      }
+    </style>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Elements
+        const wishTrack = document.getElementById('wish-track');
+        const prevButton = document.getElementById('prev-wish');
+        const nextButton = document.getElementById('next-wish');
+        const indicators = document.querySelectorAll('.carousel-indicators button');
+        const wishForm = document.getElementById('wish-form');
+        const emojiButtons = document.querySelectorAll('.emoji-btn');
+        
+        // Initialize variables
+        let currentSlide = 0;
+        let slideWidth;
+        let slideCount;
+        let slidesPerView;
+        
+        // Create star background
+        createStarBackground();
+        
+        // Initialize carousel
+        initCarousel();
+        
+        // Handle window resize
+        window.addEventListener('resize', initCarousel);
+        
+        // Previous slide
+        prevButton.addEventListener('click', function() {
+          goToSlide(currentSlide - 1);
+        });
+        
+        // Next slide
+        nextButton.addEventListener('click', function() {
+          goToSlide(currentSlide + 1);
+        });
+        
+        // Indicators click
+        indicators.forEach((indicator, index) => {
+          indicator.addEventListener('click', function() {
+            goToSlide(index * slidesPerView);
+            updateIndicators(index);
+          });
+        });
+        
+        // Emoji button selection
+        emojiButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            emojiButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Add animation
+            this.classList.add('animate__animated', 'animate__rubberBand');
+            setTimeout(() => {
+              this.classList.remove('animate__animated', 'animate__rubberBand');
+            }, 800);
+          });
+        });
+        
+        // Wish form submission (simulated)
+        wishForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const nameInput = document.getElementById('wish-name');
+          const messageInput = document.getElementById('wish-message');
+          
+          // Simple validation
+          if (nameInput.value.trim() === '' || messageInput.value.trim() === '') {
+            alert('Please fill out both your name and wish message.');
+            return;
+          }
+          
+          // Show success feedback
+          const submitButton = wishForm.querySelector('button[type="submit"]');
+          const originalText = submitButton.textContent;
+          
+          submitButton.textContent = 'Wish Sent! ✨';
+          submitButton.classList.remove('animate__pulse', 'animate__infinite');
+          submitButton.classList.add('animate__bounceIn');
+          
+          // Reset form
+          wishForm.reset();
+          emojiButtons.forEach(btn => btn.classList.remove('active'));
+          
+          // Reset button after delay
+          setTimeout(() => {
+            submitButton.textContent = originalText;
+            submitButton.classList.remove('animate__bounceIn');
+            submitButton.classList.add('animate__pulse', 'animate__infinite');
+          }, 3000);
+          
+          // Here you would typically send the data to a server
+        });
+        
+        // Initialize carousel
+        function initCarousel() {
+          const cards = document.querySelectorAll('.wish-card');
+          slideCount = cards.length;
+          
+          // Determine slides per view based on screen size
+          if (window.innerWidth >= 1024) {
+            slidesPerView = 3;
+          } else if (window.innerWidth >= 768) {
+            slidesPerView = 2;
+          } else {
+            slidesPerView = 1;
+          }
+          
+          // Set card width
+          cards.forEach(card => {
+            if (slidesPerView === 3) {
+              card.style.minWidth = '33.33%';
+            } else if (slidesPerView === 2) {
+              card.style.minWidth = '50%';
+            } else {
+              card.style.minWidth = '100%';
+            }
+          });
+          
+          // Go to current slide
+          goToSlide(currentSlide);
+          
+          // Update indicators
+          updateIndicators(Math.floor(currentSlide / slidesPerView));
+        }
+        
+        // Go to specific slide
+        function goToSlide(index) {
+          const cards = document.querySelectorAll('.wish-card');
+          slideWidth = cards[0].offsetWidth;
+          
+          // Boundary checks
+          if (index < 0) {
+            index = 0;
+          } else if (index >= slideCount - slidesPerView + 1) {
+            index = slideCount - slidesPerView;
+          }
+          
+          currentSlide = index;
+          const offset = -slideWidth * currentSlide;
+          wishTrack.style.transform = `translateX(${offset}px)`;
+          
+          // Update indicators
+          updateIndicators(Math.floor(currentSlide / slidesPerView));
+        }
+        
+        // Update indicators
+        function updateIndicators(activeIndex) {
+          indicators.forEach((indicator, index) => {
+            if (index === activeIndex) {
+              indicator.classList.remove('bg-pink-300');
+              indicator.classList.add('bg-pink-500');
+            } else {
+              indicator.classList.remove('bg-pink-500');
+              indicator.classList.add('bg-pink-300');
+            }
+          });
+        }
+        
+        // Create star background
+        function createStarBackground() {
+          const starsContainer = document.querySelector('.stars');
+          const starCount = 50;
+          
+          for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            
+            // Random positioning
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            
+            // Random animation
+            star.style.setProperty('--duration', `${Math.random() * 3 + 2}s`);
+            star.style.setProperty('--delay', `${Math.random() * 2}s`);
+            
+            // Different star sizes
+            const size = Math.random() * 3 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            
+            starsContainer.appendChild(star);
+          }
+        }
+        
+        // Touch events for mobile swipe
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        wishTrack.addEventListener('touchstart', function(e) {
+          touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        wishTrack.addEventListener('touchend', function(e) {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+        });
+        
+        function handleSwipe() {
+          const swipeThreshold = 50;
+          
+          if (touchEndX < touchStartX - swipeThreshold) {
+            // Swipe left
+            goToSlide(currentSlide + 1);
+          } else if (touchEndX > touchStartX + swipeThreshold) {
+            // Swipe right
+            goToSlide(currentSlide - 1);
+          }
+        }
+      });
+    </script>
+  </section>
+</div>
+</element><element id="551bd8ff-08ea-4fe9-bbf8-ada46a60e3b3" data-section-id="551bd8ff-08ea-4fe9-bbf8-ada46a60e3b3">
+
+
+<div id="root">
+  <footer id="footer" class="bg-neutral-900 text-white py-12 px-4 relative overflow-hidden">
+    <div class="container mx-auto max-w-6xl">
+      <div class="footer-content flex flex-col md:flex-row justify-between gap-8">
+        <!-- Left section -->
+        <div class="footer-left max-w-md">
+          <h2 class="text-3xl font-bold mb-4 text-pink-400 font-dancing-script">Birthday Wishes</h2>
+          <p class="text-neutral-300 mb-6 font-montserrat">Made with love, just for you on your special day. May your birthday be filled with joy, love, and wonderful surprises.</p>
+          
+          <div class="footer-cta">
+            <a href="#surprise-card" class="inline-block bg-pink-500 hover:bg-pink-600 text-white font-montserrat font-bold py-2 px-6 rounded-full transition-colors duration-300 shadow-lg shadow-pink-500/20">
+              Back to Top
+            </a>
+          </div>
+        </div>
+        
+        <!-- Right section -->
+        <div class="footer-right">
+          <div class="footer-nav grid grid-cols-2 gap-x-8 gap-y-4">
+            <div class="footer-nav-section">
+              <h3 class="text-xl font-bold text-pink-300 mb-3 font-dancing-script">Navigate</h3>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#surprise-card" class="text-neutral-300 hover:text-pink-400 transition-colors duration-300 font-montserrat">Home</a>
+                </li>
+                <li>
+                  <a href="#gallery" class="text-neutral-300 hover:text-pink-400 transition-colors duration-300 font-montserrat">Gallery</a>
+                </li>
+                <li>
+                  <a href="#wishes" class="text-neutral-300 hover:text-pink-400 transition-colors duration-300 font-montserrat">Wishes</a>
+                </li>
+                <li>
+                  <a href="#personal-note" class="text-neutral-300 hover:text-pink-400 transition-colors duration-300 font-montserrat">Message</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="footer-nav-section">
+              <h3 class="text-xl font-bold text-pink-300 mb-3 font-dancing-script">Birthday Fun</h3>
+              <ul class="space-y-2">
+                <li>
+                  <button id="more-balloons-btn" class="text-neutral-300 hover:text-pink-400 transition-colors duration-300 font-montserrat">More Balloons</button>
+                </li>
+                <li>
+                  <button id="play-music-btn" class="text-neutral-300 hover:text-pink-400 transition-colors duration-300 font-montserrat">Play Music</button>
+                </li>
+                <li>
+                  <button id="birthday-message-btn" class="text-neutral-300 hover:text-pink-400 transition-colors duration-300 font-montserrat">Birthday Message</button>
+                </li>
+                <li>
+                  <button id="surprise-confetti-btn" class="text-neutral-300 hover:text-pink-400 transition-colors duration-300 font-montserrat">Surprise Confetti</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-hearts absolute inset-0 pointer-events-none"></div>
+      
+      <div class="footer-bottom mt-12 pt-6 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center">
+        <div class="footer-copyright text-neutral-400 text-sm font-montserrat">
+          <p>Made with ❤️ just for your birthday</p>
+        </div>
+        
+        <div class="footer-signature mt-4 md:mt-0">
+          <p class="text-pink-400 font-dancing-script text-lg">With all my love</p>
+        </div>
+      </div>
+    </div>
+    
+    <div id="confetti-container" class="fixed inset-0 pointer-events-none z-50 hidden"></div>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;600;700&display=swap');
+      
+      .font-dancing-script {
+        font-family: 'Dancing Script', cursive;
+      }
+      
+      .font-montserrat {
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+      /* Floating hearts in footer */
+      .heart {
+        position: absolute;
+        color: #FF1493;
+        opacity: 0.2;
+        font-size: 20px;
+        animation: float-heart 12s linear infinite;
+      }
+      
+      @keyframes float-heart {
+        0% {
+          transform: translateY(100vh) translateX(0) scale(0.5);
+          opacity: 0.1;
+        }
+        100% {
+          transform: translateY(-20vh) translateX(20px) scale(1.5);
+          opacity: 0;
+        }
+      }
+      
+      /* Confetti animation */
+      .confetti {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background-color: #FF1493;
+        opacity: 0.7;
+        animation: confetti-fall var(--fall-duration, 3s) linear forwards,
+                   confetti-spin var(--spin-duration, 2s) linear infinite;
+      }
+      
+      @keyframes confetti-fall {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.7;
+        }
+        100% {
+          transform: translateY(var(--fall-distance, 500px)) rotate(360deg);
+          opacity: 0;
+        }
+      }
+      
+      @keyframes confetti-spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Create floating hearts
+        createHearts();
+        
+        // Button functionality
+        const moreBalloonsBtn = document.getElementById('more-balloons-btn');
+        const playMusicBtn = document.getElementById('play-music-btn');
+        const birthdayMessageBtn = document.getElementById('birthday-message-btn');
+        const surpriseConfettiBtn = document.getElementById('surprise-confetti-btn');
+        const confettiContainer = document.getElementById('confetti-container');
+        
+        // More Balloons Button
+        moreBalloonsBtn.addEventListener('click', function() {
+          // Scroll to balloon section
+          const balloonSection = document.getElementById('balloon-animation');
+          if (balloonSection) {
+            balloonSection.scrollIntoView({ behavior: 'smooth' });
+            
+            // Try to trigger the launch balloons function if it exists
+            if (window.launchBalloons) {
+              setTimeout(() => {
+                window.launchBalloons(10);
+              }, 1000);
+            }
+          }
+        });
+        
+        // Play Music Button
+        playMusicBtn.addEventListener('click', function() {
+          // Scroll to music section
+          const musicSection = document.getElementById('music-section');
+          if (musicSection) {
+            musicSection.scrollIntoView({ behavior: 'smooth' });
+            
+            // Try to play music if the audio player exists
+            setTimeout(() => {
+              const audioPlayer = document.getElementById('audio-player');
+              if (audioPlayer && typeof audioPlayer.play === 'function') {
+                audioPlayer.play();
+              }
+            }, 1000);
+          }
+        });
+        
+        // Birthday Message Button
+        birthdayMessageBtn.addEventListener('click', function() {
+          // Scroll to birthday message section
+          const messageSection = document.getElementById('birthday-message');
+          if (messageSection) {
+            messageSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+        
+        // Surprise Confetti Button
+        surpriseConfettiBtn.addEventListener('click', function() {
+          launchConfetti();
+        });
+        
+        // Create floating hearts in footer
+        function createHearts() {
+          const footerHearts = document.querySelector('.footer-hearts');
+          const heartSymbols = ['❤️', '💖', '💕', '💗', '💓'];
+          
+          for (let i = 0; i < 12; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+            
+            // Random positioning and timing
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.opacity = `${Math.random() * 0.3}`;
+            heart.style.fontSize = `${Math.random() * 20 + 10}px`;
+            heart.style.animationDuration = `${Math.random() * 10 + 10}s`;
+            heart.style.animationDelay = `${Math.random() * 5}s`;
+            
+            footerHearts.appendChild(heart);
+          }
+        }
+        
+        // Launch confetti animation
+        function launchConfetti() {
+          // Show confetti container
+          confettiContainer.classList.remove('hidden');
+          
+          // Create confetti
+          const confettiColors = ['#FF69B4', '#FF1493', '#FFC0CB', '#FFB6C1', '#FFC0CB', '#FFFFFF'];
+          const confettiCount = 150;
+          
+          for (let i = 0; i < confettiCount; i++) {
+            setTimeout(() => {
+              const confetti = document.createElement('div');
+              confetti.classList.add('confetti');
+              
+              // Random properties
+              const randomColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+              const size = Math.random() * 8 + 4;
+              const shape = Math.random() > 0.5 ? '50%' : '0';
+              
+              confetti.style.backgroundColor = randomColor;
+              confetti.style.width = `${size}px`;
+              confetti.style.height = `${size}px`;
+              confetti.style.left = `${Math.random() * 100}%`;
+              confetti.style.top = '0';
+              confetti.style.borderRadius = shape;
+              confetti.style.setProperty('--fall-duration', `${Math.random() * 3 + 2}s`);
+              confetti.style.setProperty('--spin-duration', `${Math.random() * 3 + 2}s`);
+              confetti.style.setProperty('--fall-distance', `${window.innerHeight}px`);
+              
+              confettiContainer.appendChild(confetti);
+              
+              // Remove confetti after animation
+              setTimeout(() => {
+                if (confetti && confetti.parentNode) {
+                  confetti.parentNode.removeChild(confetti);
+                }
+              }, 5000);
+            }, i * 20); // Stagger confetti creation
+          }
+          
+          // Hide confetti container after animation completes
+          setTimeout(() => {
+            confettiContainer.classList.add('hidden');
+          }, 6000);
+          
+          // Add animation to button
+          surpriseConfettiBtn.classList.add('animate__animated', 'animate__rubberBand');
+          setTimeout(() => {
+            surpriseConfettiBtn.classList.remove('animate__animated', 'animate__rubberBand');
+          }, 1000);
+        }
+        
+        // Make footer links interactive
+        const footerLinks = document.querySelectorAll('.footer-nav a, .footer-nav button');
+        footerLinks.forEach(link => {
+          link.addEventListener('mouseenter', function() {
+            this.classList.add('animate__animated', 'animate__pulse');
+          });
+          
+          link.addEventListener('mouseleave', function() {
+            this.classList.remove('animate__animated', 'animate__pulse');
+          });
+        });
+        
+        // Export balloon launch function for other sections to use
+        window.launchConfetti = launchConfetti;
+      });
+    </script>
+  </footer>
+</div>
+</element></div>
+            <div id="page_complete">
+            <script src="/edit/edit.js"></script>
+            <script>
+                console.log('Page complete');
+                
+            </script>
+            </body>
+            </html>
+          
